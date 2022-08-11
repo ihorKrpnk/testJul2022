@@ -8,14 +8,14 @@ import org.testng.annotations.Test;
 public class FirstUITest {
     @Test
     public void firstseleniumTest() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\IdeaProjects\\testJul2022\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ihor.karpenko\\IdeaProjects\\testJul2022\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
         driver.get("http://www.google.com/");
         driver.findElement(By.name("q")).sendKeys("testfort");
         driver.quit();
 
     }
+
     @Test
     public void LoginFireFox() {
         WebDriverManager.firefoxdriver().setup();
@@ -27,6 +27,7 @@ public class FirstUITest {
         driver.quit();
 
     }
+
     @Test
     public void LoginGoogleChrome() {
         WebDriverManager.chromedriver().setup();
@@ -38,6 +39,4 @@ public class FirstUITest {
         driver.quit();
 
     }
-
-
 }
