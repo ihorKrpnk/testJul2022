@@ -1,10 +1,12 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class LocatorsTestHomeWork_Task4 {
 
@@ -24,10 +26,12 @@ public class LocatorsTestHomeWork_Task4 {
         driver.findElement(ElementXpathCustomers).click();
 
         By ElementXpathDelete = By.xpath("//button[text()='Delete']");
+        List<WebElement> webElementList = driver.findElements(ElementXpathDelete);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < webElementList.size(); i++) {
             driver.findElement(ElementXpathDelete).click();
         }
 
+        driver.quit();
     }
 }

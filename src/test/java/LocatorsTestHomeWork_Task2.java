@@ -40,5 +40,7 @@ public class LocatorsTestHomeWork_Task2 {
 
         By ElementXpathOpenAccount = By.xpath("//button[normalize-space()='Open Account']");
         driver.findElement(ElementXpathOpenAccount).click();
+
+        driver.quit();
     }
 }

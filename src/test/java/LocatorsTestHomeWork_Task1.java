@@ -51,5 +51,7 @@ public class LocatorsTestHomeWork_Task1 {
 
         By ElementXpathReset = By.xpath("//button[normalize-space()='Reset']");
         driver.findElement(ElementXpathReset).click();
+
+        driver.quit();
     }
 }

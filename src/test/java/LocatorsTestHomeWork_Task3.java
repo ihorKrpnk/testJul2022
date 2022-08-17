@@ -34,5 +34,7 @@ public class LocatorsTestHomeWork_Task3 {
 
         driver.switchTo().alert().accept();
         driver.switchTo().defaultContent();
+
+        driver.quit();
     }
 }
