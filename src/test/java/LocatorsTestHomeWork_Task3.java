@@ -2,20 +2,29 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class LocatorsTestHomeWork_Task3 {
+    private WebDriver driver;
+    private String url = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login";
 
-    @Test
-    public void locatorsTestHomeWork() {
+    @BeforeTest
+    public void setUp() {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
-
+        driver = new ChromeDriver();
+        driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+        System.out.println("The setup process is completed");
+
+    }
+
+    @Test
+    public void checkUp() {
 
         By ElementXpathBankManagerLogin = By.xpath("//button[normalize-space()='Bank Manager Login']");
         driver.findElement(ElementXpathBankManagerLogin).click();
@@ -35,6 +44,12 @@ public class LocatorsTestHomeWork_Task3 {
         driver.switchTo().alert().accept();
         driver.switchTo().defaultContent();
 
+        System.out.println("The url test is completed");
+    }
+
+    @AfterTest
+    public void quitTest() {
         driver.quit();
+        System.out.println("The quit process is completed");
     }
 }
