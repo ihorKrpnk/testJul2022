@@ -42,11 +42,11 @@ public class WaitsHomeWork_Task4 {
         driver.findElement(By.xpath("//input[@aria-labelledby='GLUXZipUpdate-announce']")).click();
 
         WebElement continueButton;
-        continueButton = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//DIV[@id='GLUXHiddenSuccessSubTextAisEgress']/../../..//INPUT[@id='GLUXConfirmClose'])[2]")));
+        continueButton = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@id='GLUXHiddenSuccessSubTextAisEgress']/../../..//INPUT[@id='GLUXConfirmClose'])[2]")));
         continueButton.click();
 
         WebElement todaysDeals;
-        todaysDeals = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//A[@href='/deals?ref_=nav_cs_gb']")));
+        todaysDeals = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/deals?ref_=nav_cs_gb']")));
         todaysDeals.click();
 
         By ElementXpathProduct = By.xpath("//img[@alt='Uproot Cleaner Pro Reusable Pet Hair Remover']");
@@ -67,6 +67,4 @@ public class WaitsHomeWork_Task4 {
         driver.quit();
         System.out.println("The quit process is completed");
     }
-
-
 }
