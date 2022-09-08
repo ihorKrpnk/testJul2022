@@ -1,3 +1,5 @@
+package WaitsHomeWork;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,31 +22,30 @@ public class WaitsHomeWork_Task3 {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(45));
         System.out.println("The setup process is completed");
     }
 
     @Test
     public void checkUp() {
 
-        By ElementXpathAddNewToDoHomeWork = By.xpath("//input[@placeholder='Add new todo']");
-        driver.findElement(ElementXpathAddNewToDoHomeWork).sendKeys("MAKE HOMEWORK\n");
+        By elementXpathAddNewToDoHomeWork = By.xpath("//input[@placeholder='Add new todo']");
+        driver.findElement(elementXpathAddNewToDoHomeWork).sendKeys("MAKE HOMEWORK\n");
 
-        By ElementXpathAddNewToDoPracticeAutomation = By.xpath("//input[@placeholder='Add new todo']");
-        driver.findElement(ElementXpathAddNewToDoPracticeAutomation).sendKeys("Practice Automation\n");
+        By elementXpathAddNewToDoPracticeAutomation = By.xpath("//input[@placeholder='Add new todo']");
+        driver.findElement(elementXpathAddNewToDoPracticeAutomation).sendKeys("Practice Automation\n");
 
-        By ElementXpathMarkPracticeMagic = By.xpath("//li[normalize-space()='Practice magic']");
-        driver.findElement(ElementXpathMarkPracticeMagic).click();
+        By elementXpathMarkPracticeMagic = By.xpath("//li[normalize-space()='Practice magic']");
+        driver.findElement(elementXpathMarkPracticeMagic).click();
 
-        By ElementXpathBuyNewRobes = By.xpath("//li[normalize-space()='Buy new robes']");
+        By elementXpathBuyNewRobes = By.xpath("//li[normalize-space()='Buy new robes']");
         Actions action = new Actions(driver);
-        WebElement element = driver.findElement(ElementXpathBuyNewRobes);
+        WebElement element = driver.findElement(elementXpathBuyNewRobes);
         action.moveToElement(element);
         action.perform();
         this.sleep(2);
 
-        By ElementXpathMarkDeleteBuyNewRobes = By.xpath("//li[normalize-space()='Buy new robes']//i[@class='fa fa-trash']");
-        driver.findElement(ElementXpathMarkDeleteBuyNewRobes).click();
+        By elementXpathMarkDeleteBuyNewRobes = By.xpath("//li[normalize-space()='Buy new robes']//i[@class='fa fa-trash']");
+        driver.findElement(elementXpathMarkDeleteBuyNewRobes).click();
 
         System.out.println("The url test is completed");
 

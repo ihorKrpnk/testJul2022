@@ -1,14 +1,18 @@
+package LocatorsHomeWork;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
-public class LocatorsTestHomeWork_Task3 {
+public class LocatorsTestHomeWork_Task4 {
     private WebDriver driver;
     private String url = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login";
 
@@ -26,24 +30,18 @@ public class LocatorsTestHomeWork_Task3 {
     @Test
     public void checkUp() {
 
-        By ElementXpathBankManagerLogin = By.xpath("//button[normalize-space()='Bank Manager Login']");
-        driver.findElement(ElementXpathBankManagerLogin).click();
+        By elementXpathBankManagerLogin = By.xpath("//button[normalize-space()='Bank Manager Login']");
+        driver.findElement(elementXpathBankManagerLogin).click();
 
-        By ElementXpathOpenAccount = By.xpath("//button[normalize-space()='Open Account']");
-        driver.findElement(ElementXpathOpenAccount).click();
+        By elementXpathCustomers = By.xpath("//button[normalize-space()='Customers']");
+        driver.findElement(elementXpathCustomers).click();
 
-        By ElementXpathUserSelect = By.xpath("//select[@id='userSelect']");
-        driver.findElement(ElementXpathUserSelect).sendKeys("Harry");
+        By elementXpathDelete = By.xpath("//button[text()='Delete']");
+        List<WebElement> webElementList = driver.findElements(elementXpathDelete);
 
-        By ElementXpathCurrencySelect = By.xpath("//select[@id='currency']");
-        driver.findElement(ElementXpathCurrencySelect).sendKeys("Pound");
-
-        By ElementXpathProcess = By.xpath("//button[normalize-space()='Process']");
-        driver.findElement(ElementXpathProcess).click();
-
-        driver.switchTo().alert().accept();
-        driver.switchTo().defaultContent();
-
+        for (int i = 0; i < webElementList.size(); i++) {
+            driver.findElement(elementXpathDelete).click();
+        }
         System.out.println("The url test is completed");
     }
 

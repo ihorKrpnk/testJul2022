@@ -1,3 +1,5 @@
+package CommandsHomeWork;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +12,10 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class CommandsHomeWork_5 {
+public class CommandsHomeWork_4 {
+
     private WebDriver driver;
-    private String url = "https://demoqa.com/dynamic-properties";
+    private String url = "https://demoqa.com/progress-bar";
 
     @BeforeTest
     public void setUp() {
@@ -26,11 +29,20 @@ public class CommandsHomeWork_5 {
     @Test
     public void checkUp() {
 
+        By elementXpathStart = By.xpath("//button[@id='startStopButton']");
+        driver.findElement(elementXpathStart).click();
+
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        WebElement visibleAfterFiveSecondsButton;
-        visibleAfterFiveSecondsButton = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='visibleAfter']")));
-        System.out.println(visibleAfterFiveSecondsButton.isDisplayed());
+        WebElement resetButton;
+        resetButton = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='resetButton']")));
+        System.out.println(resetButton.isDisplayed());
+        resetButton.click();
+
+        WebElement startButton = driver.findElement(By.xpath("//button[@id='startStopButton']"));
+        driverWait.until(ExpectedConditions.visibilityOf(startButton));
+        System.out.println(startButton.isDisplayed());
 
     }
+
 }

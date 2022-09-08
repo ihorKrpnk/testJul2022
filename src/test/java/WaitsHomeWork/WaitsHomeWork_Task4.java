@@ -1,3 +1,5 @@
+package WaitsHomeWork;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,8 +25,6 @@ public class WaitsHomeWork_Task4 {
         driver = new ChromeDriver();
         driver.get(url);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-
         System.out.println("The setup process is completed");
     }
 
@@ -49,14 +49,14 @@ public class WaitsHomeWork_Task4 {
         todaysDeals = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/deals?ref_=nav_cs_gb']")));
         todaysDeals.click();
 
-        By ElementXpathProduct = By.xpath("//img[@alt='Uproot Cleaner Pro Reusable Pet Hair Remover']");
-        driver.findElement(ElementXpathProduct).click();
+        By elementXpathProduct = By.xpath("//img[@alt='Uproot Cleaner Pro Reusable Pet Hair Remover']");
+        driver.findElement(elementXpathProduct).click();
 
-        By ElementXpathAddToCart = By.xpath("//input[@id='add-to-cart-button']");
-        driver.findElement(ElementXpathAddToCart).click();
+        By elementXpathAddToCart = By.xpath("//input[@id='add-to-cart-button']");
+        driver.findElement(elementXpathAddToCart).click();
 
-        By ElementXpathProceedToCheckout = By.xpath("//input[@name='proceedToRetailCheckout']");
-        driver.findElement(ElementXpathProceedToCheckout).click();
+        By elementXpathProceedToCheckout = By.xpath("//input[@name='proceedToRetailCheckout']");
+        driver.findElement(elementXpathProceedToCheckout).click();
 
         System.out.println("The url test is completed");
 

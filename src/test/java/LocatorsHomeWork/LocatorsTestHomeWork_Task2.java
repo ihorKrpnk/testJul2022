@@ -1,3 +1,5 @@
+package LocatorsHomeWork;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,29 +28,29 @@ public class LocatorsTestHomeWork_Task2 {
     @Test
     public void checkUp() {
 
-        By ElementXpathBankManagerLogin = By.xpath("//button[normalize-space()='Bank Manager Login']");
-        driver.findElement(ElementXpathBankManagerLogin).click();
+        By elementXpathBankManagerLogin = By.xpath("//button[normalize-space()='Bank Manager Login']");
+        driver.findElement(elementXpathBankManagerLogin).click();
 
-        By ElementXpathAddCustomer = By.xpath("//button[normalize-space()='Add Customer']");
-        driver.findElement(ElementXpathAddCustomer).click();
+        By elementXpathAddCustomer = By.xpath("//button[normalize-space()='Add Customer']");
+        driver.findElement(elementXpathAddCustomer).click();
 
-        By ElementXpathFirstName = By.xpath("//input[@placeholder='First Name']");
-        driver.findElement(ElementXpathFirstName).sendKeys("Iggy");
+        By elementXpathFirstName = By.xpath("//input[@placeholder='First Name']");
+        driver.findElement(elementXpathFirstName).sendKeys("Iggy");
 
-        By ElementXpathLastName = By.xpath("//input[@placeholder='Last Name']");
-        driver.findElement(ElementXpathLastName).sendKeys("Pop");
+        By elementXpathLastName = By.xpath("//input[@placeholder='Last Name']");
+        driver.findElement(elementXpathLastName).sendKeys("Pop");
 
-        By ElementXpathPostCode = By.xpath("//input[@placeholder='Post Code']");
-        driver.findElement(ElementXpathPostCode).sendKeys("61145");
+        By elementXpathPostCode = By.xpath("//input[@placeholder='Post Code']");
+        driver.findElement(elementXpathPostCode).sendKeys("61145");
 
-        By ElementXpathSubmit = By.xpath("//button[@type='submit']");
-        driver.findElement(ElementXpathSubmit).click();
+        By elementXpathSubmit = By.xpath("//button[@type='submit']");
+        driver.findElement(elementXpathSubmit).click();
 
         driver.switchTo().alert().accept();
         driver.switchTo().defaultContent();
 
-        By ElementXpathOpenAccount = By.xpath("//button[normalize-space()='Open Account']");
-        driver.findElement(ElementXpathOpenAccount).click();
+        By elementXpathOpenAccount = By.xpath("//button[normalize-space()='Open Account']");
+        driver.findElement(elementXpathOpenAccount).click();
 
         System.out.println("The url test is completed");
 

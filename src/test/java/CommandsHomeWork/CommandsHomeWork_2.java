@@ -1,3 +1,5 @@
+package CommandsHomeWork;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,8 +25,8 @@ public class CommandsHomeWork_2 {
     @Test
     public void checkUp() {
 
-        By ElementXpathNewWindow = By.xpath("//button[@id='windowButton']");
-        driver.findElement(ElementXpathNewWindow).click();
+        By elementXpathNewWindow = By.xpath("//button[@id='windowButton']");
+        driver.findElement(elementXpathNewWindow).click();
 
     }
 
