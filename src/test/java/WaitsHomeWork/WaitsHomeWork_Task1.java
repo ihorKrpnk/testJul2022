@@ -100,7 +100,9 @@ public class WaitsHomeWork_Task1 {
 
         js.executeScript("window.scrollBy(0,250)", "");
 
-        driver.findElement(By.xpath("//div[@class='text-right button di']//button[@id='submit']")).click();
+        WebElement submit;
+        submit = driverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='text-right button di']//button[@id='submit']")));
+        submit.click();
 
 
         System.out.println("The url test is completed");
