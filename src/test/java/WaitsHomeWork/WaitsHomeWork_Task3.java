@@ -42,7 +42,6 @@ public class WaitsHomeWork_Task3 {
         WebElement element = driver.findElement(elementXpathBuyNewRobes);
         action.moveToElement(element);
         action.perform();
-        this.sleep(2);
 
         By elementXpathMarkDeleteBuyNewRobes = By.xpath("//li[normalize-space()='Buy new robes']//i[@class='fa fa-trash']");
         driver.findElement(elementXpathMarkDeleteBuyNewRobes).click();
@@ -56,13 +55,4 @@ public class WaitsHomeWork_Task3 {
         driver.quit();
         System.out.println("The quit process is completed");
     }
-
-    public void sleep(int seconds) {
-        try {
-            Thread.sleep(seconds * 1000);
-        } catch (InterruptedException e) {
-
-        }
-    }
-
 }
