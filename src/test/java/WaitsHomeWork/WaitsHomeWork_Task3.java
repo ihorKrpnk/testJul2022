@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -43,8 +45,11 @@ public class WaitsHomeWork_Task3 {
         action.moveToElement(element);
         action.perform();
 
-        By elementXpathMarkDeleteBuyNewRobes = By.xpath("//li[normalize-space()='Buy new robes']//i[@class='fa fa-trash']");
-        driver.findElement(elementXpathMarkDeleteBuyNewRobes).click();
+        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement deleteBuyNewRobes;
+        deleteBuyNewRobes = webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[normalize-space()='Buy new robes']//i[@class='fa fa-trash']")));
+        deleteBuyNewRobes.click();
 
         System.out.println("The url test is completed");
 
